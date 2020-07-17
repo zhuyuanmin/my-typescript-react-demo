@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addNameCreater, addAgeCreater, addNameAsync } from '@/store/action/index'
+import { addNameCreator, addAgeCreator, addNameAsync } from '@/store/action/index'
 import Router from '@/router/router'
 import { Button } from 'antd'
 
@@ -8,8 +8,9 @@ function App(props: any) {
     return (
         <div className="App">
             <header className="App-header">
-                <Button type="primary" onClick={() => props.addAgeCreater(30)}>Button {props.friend.age}</Button>
-                <a onClick={() => props.addNameCreater('xxx')}>Learn React {props.user.name}</a>
+                <Button type="primary" onClick={() => props.addAgeCreator(30)}>Button {props.friend.age}</Button>
+                {/* eslint-disable-next-line */}
+                <a onClick={() => props.addNameAsync('xxx')}>Learn React {props.user.name}</a>
             </header>
             <Router />
         </div>
@@ -21,5 +22,5 @@ export default connect(
         user: state.user,
         friend: state.friend
     }),
-    { addNameCreater, addAgeCreater, addNameAsync }
+    { addNameCreator, addAgeCreator, addNameAsync }
 )(App)

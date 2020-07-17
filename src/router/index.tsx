@@ -1,8 +1,17 @@
-// import React from 'react'
+import React from 'react'
+import { Button } from 'antd'
 import Loadable from 'react-loadable'
 
-const Loading = () => {
-    return null
+const Loading = (props: any) => {
+    if (props.error) {
+        return <div>Error! <Button type="link" onClick={props.retry}>Retry</Button></div>
+    } else if (props.timedOut) {
+        return <div>Timeout! <Button onClick={props.retry}>Retry</Button></div>
+    } else if (props.pastDelay) {
+        return <div>Loading...</div>
+    } else {
+        return null
+    }
 }
 
 const routes = [
