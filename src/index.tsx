@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import App from './App'
+import store from '@/store/store'
+import './App.less'
+import axios from 'axios'
+
+const service = axios.create({
+  baseURL: '/',
+  timeout: 15000,
+})
+
+service.interceptors.request.use(function (config) {
+  return config
+})
+
+service.interceptors.response.use(function (config) {
+  return config
+})
+
+Object.assign(window, { service })
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+)
