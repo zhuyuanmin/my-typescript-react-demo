@@ -6,6 +6,10 @@ const {
     addLessLoader,
 } = require('customize-cra')
 const path = require('path')
+// 修改打包路径除了output，这里也要修改
+const paths = require('react-scripts/config/paths')
+paths.appBuild = path.join(path.dirname(paths.appBuild), 'dist')
+
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const myPlugin = [
     new UglifyJsPlugin({
@@ -62,13 +66,11 @@ module.exports = override(
             },
         })
 
-        config.output = {
-            path: path.resolve(__dirname, 'build'),
-            filename: '[hash].[name].js',
-            chunkFilename: '[contenthash].[name].js',
-            publicPath: './'
-        }
-		
+        //！ 这里尽量不要以赋值的方式覆盖原有配置
+        config.output.path = path.resolve(__dirname, 'dist')
+        config.output.filename = '[hash].[name].js'
+        config.output.chunkFilename = 'static/js/[contenthash].[name].js'
+
         return config
     }
 )

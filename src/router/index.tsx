@@ -33,7 +33,7 @@ const routes = [
             delay: 200,
             timeout: 10000,
         }),
-        exact: true,
+        // exact: true,
         routes: [
             {
                 path: '/new/list',
