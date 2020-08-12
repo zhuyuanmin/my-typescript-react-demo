@@ -27,9 +27,7 @@
         {{#if sass}}
         "node-sass": "^4.14.1"
         {{/if}}
-        {{#if less}}
         "less-loader": "^6.2.0",
-        {{/if}}
         "mobx": "^5.15.5",
         "mobx-react": "^6.2.5",
         "react": "^16.13.1",
