@@ -25,7 +25,7 @@
         "dayjs": "^1.8.31",
         "http-proxy-middleware": "^1.0.5",
         {{#if sass}}
-        "node-sass": "^4.14.1"
+        "node-sass": "^4.14.1",
         {{/if}}
         "less-loader": "^6.2.0",
         "mobx": "^5.15.5",
