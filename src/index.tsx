@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
+import { Provider } from 'mobx-react'
 import App from './App'
-import store from '@/store/store'
+import store from '@/store'
 import './App.less'
 import axios from 'axios'
 
@@ -18,8 +18,6 @@ service.interceptors.request.use(function (config) {
 service.interceptors.response.use(function (config) {
   return config
 })
-
-Object.assign(window, { service })
 
 ReactDOM.render(
   <Provider store={store}>
