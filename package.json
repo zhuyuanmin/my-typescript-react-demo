@@ -24,10 +24,10 @@
         "customize-cra": "^1.0.0",
         "dayjs": "^1.8.31",
         "http-proxy-middleware": "^1.0.5",
+        "less-loader": "^6.2.0",
         {{#if sass}}
         "node-sass": "^4.14.1",
         {{/if}}
-        "less-loader": "^6.2.0",
         "mobx": "^5.15.5",
         "mobx-react": "^6.2.5",
         "react": "^16.13.1",
