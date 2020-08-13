@@ -1,27 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Router from '@/router/router'
+import { connect } from 'react-redux'
+import { dispatchs } from '@/store/reducer/index'
 import { Button } from 'antd'
-import { inject, observer } from 'mobx-react'
 
-@inject('store')
-@observer
-class App extends Component {
-    render() {
-        // @ts-ignore
-        // mobx 踩坑 -- 不可以全部解构出来使用
-        const { counter } = this.props.store
-        return (
-            <div className="App">
-                <header className="App-header">
-                    { counter.counter }
-                    <Button type="primary" onClick={() => counter.increment()}>Counter ++</Button>
-                    {/* eslint-disable-next-line */}
-                    <a onClick={() => counter.incrementAsync()}>Counter Async ++</a>
-                </header>
-                <Router />
-            </div>
-        )
-    }
+delete dispatchs.default
+
+const App = (props: any) => {
+    return (
+        <div className="App">
+            <header className="App-header">
+                <Button type="primary" onClick={() => props.loginIn(String(Date.now()))}>
+                    登录
+                </Button>
+                {/* eslint-disable-next-line */}
+                <a onClick={() => props.loginOut()}>登出</a>
+            </header>
+            <Router store={props} />
+        </div>
+    )
 }
 
-export default App
+export default connect(
+    (state: any) => ({ store: state }),
+    { ...dispatchs }
+)(App)
