@@ -5,6 +5,12 @@ import App from './App'
 import store from '@/store'
 import './App.less'
 import axios from 'axios'
+import { ConfigProvider } from 'antd'
+import zhCN from 'antd/es/locale/zh_CN'
+
+// polyfill
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 
 const service = axios.create({
   baseURL: '/',
@@ -21,7 +27,9 @@ service.interceptors.response.use(function (config) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ConfigProvider locale={zhCN}>
+      <App />
+    </ConfigProvider>
   </Provider>,
   document.getElementById('root')
 )
