@@ -1,7 +1,9 @@
-import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-import logger from 'redux-logger'
-import reducers from './reducer'
+import { combineReducers } from 'redux'
+import * as LoginReducer from './user'
+export const dispatchs = {
+    ...LoginReducer,
+}
 
-const store = createStore(reducers, applyMiddleware(thunk, logger))
-export default store
+export default combineReducers({
+    login: LoginReducer.default,
+})
