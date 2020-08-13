@@ -6,7 +6,7 @@
     "private": true,
     "scripts": {
         "start": "react-app-rewired start",
-        "build": "react-app-rewired build:prod",
+        "build": "npm run build:prod",
         "build:prod": "cross-env NODE_ENV_CUSTOM=production react-app-rewired  build --mode production",
         "build:test": "cross-env NODE_ENV_CUSTOM=testing react-app-rewired build --mode testing",
         "build:pre": "cross-env NODE_ENV_CUSTOM=preview react-app-rewired build --mode preview",
