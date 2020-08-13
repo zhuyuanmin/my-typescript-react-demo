@@ -25,7 +25,9 @@
         "dayjs": "^1.8.31",
         "http-proxy-middleware": "^1.0.5",
         "less-loader": "^6.2.0",
+        {{#if sass}}
         "node-sass": "^4.14.1",
+        {{/if}}
         "react": "^16.13.1",
         "react-app-rewired": "^2.1.6",
         "react-dom": "^16.13.1",
