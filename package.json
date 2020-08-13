@@ -1,8 +1,6 @@
 {
-    "name": "{{name}}",
-    "version": "1.0.0",
-    "description": "{{description}}",
-    "author": "{{author}}",
+    "name": "my-react",
+    "version": "0.1.0",
     "private": true,
     "scripts": {
         "start": "react-app-rewired start",
@@ -24,16 +22,16 @@
         "customize-cra": "^1.0.0",
         "dayjs": "^1.8.31",
         "http-proxy-middleware": "^1.0.5",
-        {{#if sass}}
-        "node-sass": "^4.14.1",
-        {{/if}}
         "less-loader": "^6.2.0",
-        "mobx": "^5.15.5",
-        "mobx-react": "^6.2.5",
+        "node-sass": "^4.14.1",
         "react": "^16.13.1",
         "react-app-rewired": "^2.1.6",
         "react-dom": "^16.13.1",
         "react-loadable": "^5.5.0",
+        "react-redux": "^7.2.0",
+        "redux": "^4.0.5",
+        "redux-logger": "^3.0.6",
+        "redux-thunk": "^2.3.0",
         "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.1",
         "typescript": "~3.7.2",
