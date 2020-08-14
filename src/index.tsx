@@ -7,6 +7,7 @@ import './App.{{suffix}}'
 import axios from 'axios'
 import { ConfigProvider } from 'antd'
 import zhCN from 'antd/es/locale/zh_CN'
+import 'moment/locale/zh-cn'
 
 // polyfill
 import 'core-js/stable'
