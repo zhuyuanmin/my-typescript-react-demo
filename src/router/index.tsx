@@ -4,7 +4,8 @@ import Loadable from 'react-loadable'
 
 const Loading = (props: any) => {
     if (props.error) {
-        return <div>Error! - {props.error}<Button type="link" onClick={props.retry}>Retry</Button></div>
+        console.log(props.error)
+        return <div>Error! <Button type="link" onClick={props.retry}>Retry</Button></div>
     } else if (props.timedOut) {
         return <div>Timeout! <Button onClick={props.retry}>Retry</Button></div>
     } else if (props.pastDelay) {
